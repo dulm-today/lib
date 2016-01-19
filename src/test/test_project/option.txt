@@ -1,0 +1,5 @@
+int = 100
+double = 99999999.111000
+bool = true
+string = duliming
+combo = no_select

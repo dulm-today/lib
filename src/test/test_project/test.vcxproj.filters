@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\test_unit">
+      <UniqueIdentifier>{abe5e7bb-a225-485e-929c-fb2803ddf0a3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\avlTree.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\printplus.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\test_core.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\avl_tree_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\list_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dir_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\dir_win32.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\option_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\option.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\struct_offset_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\struct_offset.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\bitcount.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bitcount_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sql_impl_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sql_impl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\printf_safe_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\printf_safe.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\buffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\asm_param_list_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sqlapi.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\register_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sqlapi_sqlite3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\sqlreg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\log.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\log_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\wallpaper_set_win32.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\tstring_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\printf_calc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\libtime.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\character_transcoding_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\character_transcoding.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\callstack_win32_test.cpp">
+      <Filter>源文件\test_unit</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\callstack_win32.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\avlTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\list.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\printplus.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\test_core.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\dir.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\option.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\struct_offset.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\bitcount.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sql_impl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\printf_safe.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\buffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sqlapi.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sqlapi_sqlite3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\sqlreg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\wallpaper_set_win32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tstring.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\character_transcoding.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
