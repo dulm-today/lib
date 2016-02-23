@@ -88,11 +88,12 @@ static inline void list_add_tail(list_head* head, list_node* n)
 static inline void list_del(list_head* head, list_node* n)
 {
 	assert(NULL != head && NULL != n);
-	
+
+	// already removed
 	if (NULL == n->next || NULL == n->prev)
 		return;
 
-	// no item
+	// list no item
 	if (NULL == head->head)
 		return;
 
