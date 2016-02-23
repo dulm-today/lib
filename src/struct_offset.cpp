@@ -25,7 +25,6 @@ typedef void* ptr;
 static char st_inited = 0;
 
 /* default pragma pack value, the max of the st_type_offset */
-static unsigned char st_pack = 0;
 static unsigned char st_pack_default = 0;
 
 static unsigned char st_type_size[st_type_end] = {0xff};
@@ -73,35 +72,8 @@ void st_init()
 	for (i = 0; i < st_type_end; ++i){
 		st_pack_default = MAX(st_pack_default, st_type_align[i]);
 	}
-	st_pack = st_pack_default;
 
 	st_inited = 1;
-}
-
-int st_pack_set(int n)
-{
-	int nn = n;
-	st_init();
-	
-	if (n > 0){
-		if (1 == bitcount32(n))
-			st_pack = n;
-	}
-
-	return st_pack;
-}
-
-void st_pack_reset()
-{
-	st_init();
-	st_pack = st_pack_default;
-}
-
-int st_pack_get()
-{
-	st_init();
-
-	return st_pack;
 }
 
 int st_pack_default_get()
@@ -129,49 +101,60 @@ int st_type_align_get(enum st_type type)
 }
 
 
-void st_calc_begin(pst_calc calc)
+void st_calc_begin(pst_calc calc, int pack /*= 0*/)
 {
 	st_init();
 	if (calc){
 		calc->pack = 0;
 		calc->offset = 0;
 		calc->size = 0;
+		calc->nosizearray = 0;
+
+		if (pack > 0 && 1 == bitcount32(pack))
+			calc->pack = pack;
+		else
+			calc->pack = st_pack_default;
 	}
 }
 
 // return the offset of the type
-int  st_calc_type(pst_calc calc, enum st_type type)
+int  st_calc_type(pst_calc calc, enum st_type type, int num /*= 1*/)
 {
 	int align, ptr;
 
 	st_init();
 	
-	if (NULL == calc)
+	if (NULL == calc || calc->nosizearray)
 		return -1;
 	
 	align = st_type_align_get(type);
 	if (align <= 0)
 		return -1;
 
-	align = MIN(align, st_pack);
+	align = MIN(align, calc->pack);
 	ptr = ALIGN(calc->offset, align);
 
-	calc->offset = ptr + st_type_size_get(type);
+	if (num)
+		calc->offset = ptr + st_type_size_get(type) * num;
+	calc->nosizearray = num == 0;
 	calc->pack = MAX(align, calc->pack);
 
 	return ptr;
 }
 
-int st_calc_child(pst_calc calc, const pst_calc child)
+int st_calc_child(pst_calc calc, const pst_calc child, int num /*= 0*/)
 {
 	int ptr;
 	
 	if (NULL == calc || NULL == child 
-		|| child->pack <= 0 || child->size <= 0)
+		|| child->pack <= 0 || child->size <= 0
+		|| calc->nosizearray)
 		return -1;
 
 	ptr = ALIGN(calc->offset, child->pack);
-	calc->offset = ptr + child->size;
+	if (num)
+		calc->offset = ptr + child->size * num ;
+	calc->nosizearray = num == 0;
 	calc->pack = MAX(calc->pack, child->pack);
 	
 	return ALIGN(ptr, child->pack);
