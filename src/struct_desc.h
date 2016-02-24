@@ -5,6 +5,8 @@
 
 #define ST_MAX_DEPTH		16
 
+
+// expand the st_type (struct_offset.h)
 enum st_type_ex
 {
 	st_obj 		= 0x000100,		// st_type_end
@@ -52,21 +54,21 @@ typedef struct st_desc_pos
 
 
 // structure operate
-st_desc_pos_t*	st_find_begin(const st_desc_t* desc);
+st_desc_pos_t*	st_find_begin(st_desc_t* desc);
 st_desc_pos_t*	st_find_rebegin(st_desc_pos_t* pos);
 
 st_desc_item_t*	st_next(st_desc_pos_t* pos);
 st_desc_item_t* st_parent(st_desc_pos_t* pos);
 st_desc_item_t* st_child(st_desc_pos_t* pos);
 
-st_desc_item_t* st_get_item(const st_desc_pos_t* pos);
-st_desc_item_t* st_parent_item(const st_desc_pos_t* pos);
-st_desc_item_t* st_child_item(const st_desc_pos_t* pos);
+st_desc_item_t* st_get_item(st_desc_pos_t* pos);
+st_desc_item_t* st_parent_item(st_desc_pos_t* pos);
+st_desc_item_t* st_child_item(st_desc_pos_t* pos);
 
 /*
 	name		item name, order by "xxx.xxx"
 */
-st_desc_pos_t* 	st_find_item(const st_desc_t* desc, const char* name);
+st_desc_pos_t* 	st_find_item(st_desc_t* desc, const char* name);
 void 			st_find_end(st_desc_pos_t* pos);
 
 

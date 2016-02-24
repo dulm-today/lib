@@ -1,0 +1,88 @@
+struct_desc 	描述结构体, 通过该描述, 能够创建对象, 访问对象中的不同成员(需要依赖描述desc和item)
+	需要提供序列化流程:
+		1. name
+		2. type
+		3. value
+		4. begin_array
+		5. end_array
+		6. begin_struct
+		7. end_struct
+		
+		eg:
+			struct {
+				int 	aa;
+				float 	bb;
+				char	cc[10];
+			};
+		
+	针对不同type的序列化回调函数
+		unsigned int
+		signed int
+		int64
+		uint64
+		float
+		double
+		ptr
+		string
+	
+option_struct	将结构化数据保存为配置文件. 需要定义保存位置(block), 对应的名称\输入输出类型\读写地址\默认值 
+
+
+type:   global
+	id					u8
+	callback			u32_callback
+
+
+item_desc:
+	filed_id
+	name
+	type
+	offset ?
+	array_size
+	
+	child
+	
+	
+struct_desc:
+	name
+	size
+	item_num
+	items
+	
+	constructor
+	destructor
+	
+	
+
+
+
+
+
+filed:
+	id			结构体内唯一
+	type		数据类型
+	name		名称
+	attr		属性
+	default		默认值
+	
+
+数据类型:
+	
+	
+
+
+序列化/反序列化工具 设计
+目标:
+	性能高
+	使用方便 原始数据 <-> 结构体
+	扩展问题:
+		1. 修改结构体成员名称				支持
+		2. 在结构体末尾添加成员				支持
+		3. 在结构体中间添加成员				
+		
+		总结:
+			将结构体成员序列化到Raw数据, 以及如何从Raw数据中还原结构体, 并定位到相对应的filed
+	
+	
+	
+	
