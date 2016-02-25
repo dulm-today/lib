@@ -30,7 +30,9 @@ option_struct	将结构化数据保存为配置文件. 需要定义保存位置(block), 对应的名称\输
 
 type:   global
 	id					u8
-	callback			u32_callback
+	align
+	size
+	callback			
 
 
 item_desc:
