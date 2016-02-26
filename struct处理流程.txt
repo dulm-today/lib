@@ -30,10 +30,27 @@ option_struct	将结构化数据保存为配置文件. 需要定义保存位置(block), 对应的名称\输
 
 type:   global
 	id					u8
-	align
+	align				
 	size
-	callback			
+	callback			// 这里需要考虑容器
+		序列化
+		序列化
+		反序列化
+	
+	注意: 普通类型, 结构体类型, 容器类型, 指针类型(地址, 字符串, 对象地址)
+	
+	不能再被拆分的类型:
+		type_normal, 
+		//type_struct, 不是虚类, 可以被拆分, 不包含
+		type_object, 是虚类
+		type_ptr_char
+		
+	序列化:
+		type_id->get_callback()
+		callback(&p, &len, p)
 
+	反序列化:
+		
 
 item_desc:
 	filed_id
